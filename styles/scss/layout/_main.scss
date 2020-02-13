@@ -3,9 +3,34 @@ main {
 
   > div {
     &:nth-child(2) {
-      background-color: red;
       flex: 1;
-      padding: 12.5rem 2rem;
+      padding: 12.5rem 1rem; // 7.5rem (header) + 5rem
+
+      display: grid;
+      align-items: flex-start;
+      @media screen and (min-width: $mobile) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      grid-gap: 2rem;
+
+      > div {
+        background-image: linear-gradient(
+          to right,
+          #9c1951,
+          #ad124f,
+          #bd084b,
+          #cc0145,
+          #da003d,
+          #df1939,
+          #e42835,
+          #e93431,
+          #e74533,
+          #e55236,
+          #e35e3a,
+          #e1683f
+        );
+        height: 100%;
+      }
     }
   }
 }

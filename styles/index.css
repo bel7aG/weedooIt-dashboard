@@ -33,9 +33,17 @@ body {
 main {
   display: flex; }
   main > div:nth-child(2) {
-    background-color: red;
     flex: 1;
-    padding: 12.5rem 2rem; }
+    padding: 12.5rem 1rem;
+    display: grid;
+    align-items: flex-start;
+    grid-gap: 2rem; }
+    @media screen and (min-width: 768px) {
+      main > div:nth-child(2) {
+        grid-template-columns: repeat(2, 1fr); } }
+    main > div:nth-child(2) > div {
+      background-image: linear-gradient(to right, #9c1951, #ad124f, #bd084b, #cc0145, #da003d, #df1939, #e42835, #e93431, #e74533, #e55236, #e35e3a, #e1683f);
+      height: 100%; }
 
 header {
   position: fixed;
