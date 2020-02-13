@@ -1,0 +1,11 @@
+main {
+  display: flex;
+
+  > div {
+    &:nth-child(2) {
+      background-color: red;
+      flex: 1;
+      padding: 12.5rem 2rem;
+    }
+  }
+}

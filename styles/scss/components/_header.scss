@@ -1,0 +1,58 @@
+header {
+  position: fixed;
+  right: 0;
+  height: 7.5rem;
+  background-color: #fff;
+  width: calc(100vw - 27rem);
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.12);
+  padding: 0 1rem 0 2rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    > div {
+      &:last-child {
+        min-width: 22rem;
+      }
+
+      &:last-child,
+      > div,
+      > div > span {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+      }
+
+      > div {
+        > span {
+          margin-right: 2rem;
+        }
+        > :not(span) {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 100%;
+        }
+        > i {
+          margin-right: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 3rem;
+          background-color: #6e6;
+        }
+        &:first-child {
+          margin-right: 3rem;
+          flex-direction: row-reverse;
+          > span {
+            font-size: 2.2rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.slider:first-child {
+  width: 27rem;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #ff7848,
+    #eb5d4d,
+    #d44450,
+    #b92d52,
+    #9c1951
+  );
+
+  > div:first-child {
+    height: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-bottom: 2px solid #999;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+}

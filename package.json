@@ -1,0 +1,14 @@
+{
+  "name": "WeeDooIt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bel7aG/weedooIt-dashboard.git",
+  "author": "Belhassen Gharsallah <Belhassen.Gharsallah@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "compile:sass": "node-sass styles/scss/index.scss styles/index.css -w"
+  }
+}
