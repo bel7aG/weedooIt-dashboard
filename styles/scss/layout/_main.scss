@@ -2,18 +2,31 @@ main {
   display: flex;
 
   > div {
-    &:nth-child(2) {
-      flex: 1;
-      padding: 12.5rem 1rem; // 7.5rem (header) + 5rem
-
-      display: grid;
-      align-items: flex-start;
-      @media screen and (min-width: $mobile) {
-        grid-template-columns: repeat(2, 1fr);
+    &:first-child {
+      position: absolute;
+      z-index: -1;
+      color: #fff;
+      height: 7.5rem;
+      width: 15rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > h1 {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-style: italic;
       }
+    }
+    &:nth-child(3) {
+      max-height: 100vh;
+      overflow-y: auto;
+      flex: 1;
+      display: grid;
       grid-gap: 2rem;
 
       > div {
+        padding: 6rem 0;
+        width: 100%;
         background-image: linear-gradient(
           to right,
           #9c1951,
@@ -29,7 +42,67 @@ main {
           #e35e3a,
           #e1683f
         );
-        height: 100%;
+        &,
+        > div {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+
+        align-items: flex-start;
+        > div {
+          height: 100%;
+          width: 100%;
+          padding: 1rem 1rem 1rem 6rem;
+          > * {
+            color: #fff;
+          }
+
+          > h1 {
+            font-weight: 500;
+            letter-spacing: 2px;
+          }
+          @media screen and (min-width: $tablet) {
+            > h1 {
+              font-size: 5rem;
+            }
+          }
+          @media screen and (max-width: $tablet) {
+            > h1 {
+              font-size: 2.8rem;
+            }
+          }
+
+          > button {
+            cursor: pointer;
+            background-color: #9c1951;
+            border: none;
+            padding: 1rem 4rem;
+            display: flex;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.9rem;
+            border-radius: 32px;
+          }
+        }
+        @media (min-width: $mobile) and (max-width: $tablet) {
+          flex-direction: column;
+          padding: 6rem 1rem;
+          > div {
+            padding: 0;
+          }
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        padding: 12.5rem 3rem !important;
+      }
+
+      @media screen and (min-width: $mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 12.5rem 1rem !important;
       }
     }
   }

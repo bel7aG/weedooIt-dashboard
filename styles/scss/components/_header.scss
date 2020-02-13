@@ -1,11 +1,31 @@
 header {
   position: fixed;
-  right: 0;
+  @media screen and (min-width: $mobile) {
+    width: calc(100vw - 27rem);
+    left: 27rem;
+  }
+  @media screen and (max-width: $mobile) {
+    width: calc(100vw - 15rem);
+    left: 15rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 100vw;
+    left: 0;
+  }
+
   height: 7.5rem;
   background-color: #fff;
-  width: calc(100vw - 27rem);
   box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.12);
   padding: 0 1rem 0 2rem;
+
+  @media screen and (max-width: 500px) {
+    > div {
+      > div:last-child {
+        transform: scale(0.66);
+      }
+    }
+  }
 
   > div {
     display: flex;
@@ -15,10 +35,6 @@ header {
     width: 100%;
 
     > div {
-      &:last-child {
-        min-width: 22rem;
-      }
-
       &:last-child,
       > div,
       > div > span {
@@ -43,6 +59,7 @@ header {
           align-items: center;
           font-size: 3rem;
           background-color: #6e6;
+          font-weight: 700;
         }
         &:first-child {
           margin-right: 3rem;

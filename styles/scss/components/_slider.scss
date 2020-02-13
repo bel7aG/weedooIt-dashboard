@@ -1,5 +1,12 @@
-.slider:first-child {
-  width: 27rem;
+.slider {
+  @media screen and (max-width: $mobile) {
+    display: none;
+    min-width: 15rem;
+    max-width: 15rem;
+  }
+
+  min-width: 27rem;
+  max-width: 27rem;
   min-height: 100vh;
   max-height: 100vh;
   background-image: linear-gradient(
@@ -11,14 +18,39 @@
     #9c1951
   );
 
-  > div:first-child {
-    height: 7.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-bottom: 2px solid #999;
-    text-transform: uppercase;
-    font-style: italic;
+  > div {
+    &:first-child {
+      height: 7.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      border-bottom: 2px solid #888;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    &:nth-child(2) {
+      height: 100%;
+      overflow-y: auto;
+      > div {
+        padding: 0 2.5rem;
+        &:not(:last-child) {
+          > ul {
+            border-bottom: 1px solid #aaa;
+          }
+        }
+        > ul {
+          list-style-type: none;
+          padding: 1rem 0;
+          > li {
+            padding: 1rem;
+            padding-left: 2rem;
+            > a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
   }
 }
